@@ -6,7 +6,7 @@ const ActiveProject = (props) => {
     projectId, name, deadline, status, onClickHandler,
   } = props;
   return (
-    <Link to={`/projects/${projectId}`} className="activeItem" onClick={() => onClickHandler(projectId)}>
+    <Link to="/project-tasks" className="activeItem" onClick={() => onClickHandler(projectId)}>
       <h3 className="activeItem-name">{name}</h3>
       <p className="activeItem-deadline">{deadline}</p>
       <p className="activeItem-status">{status}</p>

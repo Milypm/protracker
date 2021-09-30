@@ -2,13 +2,16 @@ import { createStore, combineReducers, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
 import { composeWithDevTools } from 'redux-devtools-extension';
 import currentUserReducer from './reducers/currentUser';
-import dashboardPanelReducer from './reducers/dashboardPanel';
+// import dashboardPanelReducer from './reducers/dashboardPanel';
+import { dashboardPanelProjectsReducer, dashboardPanelTasksReducer } from './reducers/dashboardPanel';
 import activeProjectsOrTasksReducer from './reducers/activeProjectsOrTasks';
 import projectOrDevTasksReducer from './reducers/projectOrDevTasks';
 
 const rootReducer = combineReducers({
   currentUser: currentUserReducer,
-  dashboardPanel: dashboardPanelReducer,
+  // dashboardPanel: dashboardPanelReducer,
+  dashboardPanelProjects: dashboardPanelProjectsReducer,
+  dashboardPanelTasks: dashboardPanelTasksReducer,
   activeProjectsOrTasks: activeProjectsOrTasksReducer,
   projectOrDevTasks: projectOrDevTasksReducer,
 });

@@ -1,3 +1,15 @@
+@font-face {
+  font-family: "HelveticaBold";
+  src: local("HelveticaBold"),
+   url("./fonts/Helvetica-Bold.ttf") format("truetype");
+  font-weight: bold;
+
+  font-family: "HelveticaLight";
+  src: local("HelveticaLight"),
+   url("./fonts/Helvetica-Light.ttf") format("truetype");
+  font-weight: lighter;
+}
+  
 .blue-hard {
   background: #62B5E5;
 }

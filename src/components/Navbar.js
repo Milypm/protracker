@@ -1,5 +1,5 @@
 const Navbar = () => {
-  const name = 'Mily';
+  const name = 'Navbar here';
   return (
     <div>
       <i className="fas fa-chevron-left" />

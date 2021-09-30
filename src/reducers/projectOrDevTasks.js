@@ -10,17 +10,17 @@ import {
 const projectOrDevTasksReducer = (state = { proOrDevTasks: [] }, action) => {
   switch (action.type) {
     case PROJECT_TASKS_REQUEST:
-      return { loading: true, proOrDevTasks: {} };
+      return { ...state, loading: true, proOrDevTasks: {} };
     case PROJECT_TASKS_SUCCESS:
-      return { loading: false, proOrDevTasks: action.payload };
+      return { ...state, loading: false, proOrDevTasks: action.payload };
     case PROJECT_TASKS_FAIL:
-      return { loading: false, error: action.payload };
+      return { ...state, loading: false, error: action.payload };
     case DEV_TASK_REQUEST:
-      return { loading: true, proOrDevTasks: {} };
+      return { ...state, loading: true, proOrDevTasks: {} };
     case DEV_TASK_SUCCESS:
-      return { loading: false, proOrDevTasks: action.payload };
+      return { ...state, loading: false, proOrDevTasks: action.payload };
     case DEV_TASK_FAIL:
-      return { loading: false, error: action.payload };
+      return { ...state, loading: false, error: action.payload };
     default:
       return state;
   }

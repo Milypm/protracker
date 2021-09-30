@@ -1,7 +1,7 @@
 @media (min-width: 100px) and (max-width: 768px) {
   body {
     margin: 0;
-    height: max-content;
+    height: 812px;
     border: 2px solid red;
   }
 

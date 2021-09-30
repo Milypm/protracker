@@ -11,10 +11,12 @@ import {
 export const getActiveProjects = (userId) => async (dispatch) => {
   try {
     dispatch({ type: ACTIVE_PROJECTS_REQUEST });
-    const data = await axios.get('http://localhost:3001/projects');
+    const response = await axios.get('http://localhost:3001/projects');
+    const { data } = response;
+    const { projects } = data;
     const userProjects = [];
-    data.forEach((project) => {
-      if (project.user_id === userId && project.status !== 'Finished') {
+    projects.forEach((project) => {
+      if (project.user_id === userId && project.status !== 'Closed') {
         userProjects.push(project);
       }
     });
@@ -34,9 +36,11 @@ export const getActiveTasks = (userName) => async (dispatch) => {
   try {
     dispatch({ type: ACTIVE_TASKS_REQUEST });
     const userTasks = [];
-    const data = await axios.get('http://localhost:3001/project_tasks');
-    data.forEach((pTask) => {
-      if (pTask.assigned_to === userName && pTask.status !== 'Finished') {
+    const response = await axios.get('http://localhost:3001/project_tasks');
+    const { data } = response;
+    const { projecTasks } = data;
+    projecTasks.forEach((pTask) => {
+      if (pTask.assigned_to === userName && pTask.status !== 'Closed') {
         userTasks.push(pTask);
       }
     });
